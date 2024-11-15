@@ -12,10 +12,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gs_eco_dica.model.EcoDicaModel
 import com.example.gs_eco_dica.viewmodel.EcoDicasViewModel
 import com.example.gs_eco_dica.viewmodel.EcoDicasViewModelFactory
-import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /**
         searchView = findViewById(R.id.searchView)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -40,13 +39,13 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         })
-
+        **/
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Eco Dicas"
 
-        
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val ecoDicasAdapter = EcoDicasAdapter { dica ->
             viewModel.removeEcoDica(dica)
